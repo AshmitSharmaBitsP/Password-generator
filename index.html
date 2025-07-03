@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Password Generator</h1>
+        
+        <div class="form-group">
+            <label for="length">Password Length</label>
+            <div class="length-control">
+                <input type="range" id="length" min="4" max="50" value="12">
+                <div class="length-display" id="lengthDisplay">12</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Character Options</label>
+            <div class="options">
+                <div class="option">
+                    <input type="checkbox" id="uppercase" checked>
+                    <label for="uppercase">Uppercase (A-Z)</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase">Lowercase (a-z)</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers">Numbers (0-9)</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">Symbols (!@#$%)</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="generate-btn" onclick="generatePassword()">Generate Password</button>
+
+        <div class="password-output">
+            <textarea class="password-field" id="passwordField" placeholder="Your generated password will appear here..." readonly></textarea>
+            <button class="copy-btn" id="copyBtn" onclick="copyPassword()">Copy</button>
+        </div>
+
+        <div class="strength-indicator">
+            <div class="strength-bar">
+                <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <div class="strength-text" id="strengthText">Generate a password</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
